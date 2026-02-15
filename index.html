@@ -92,6 +92,37 @@ const searchAPI = debounce((query: string) =&gt; {
 }, 300);</code></pre>
             </section>
 
+            <section id="code-codewars">
+                <h2>Code Example #2</h2>
+                <p>Solution to <a href="https://www.codewars.com/kata/59da47fa27ee00a8b90000b4/train/javascript">Codewars kata</a> "Odd-numbered substrings" - Count how many odd-numbered substrings can be formed from a string of digits:</p>
+                <pre><code>// Task: Given a string of integers, return the number of 
+// odd-numbered substrings that can be formed.
+// Example: "1341" -&gt; substrings: 1, 1, 3, 13, 41, 341, 1341 = 7 numbers
+
+function solve(s) {
+  let count = 0;
+  
+  // Key insight: A number is odd if its last digit is odd
+  // For each position with an odd digit, count all substrings 
+  // ending at that position
+  
+  for (let i = 0; i &lt; s.length; i++) {
+    // If digit at position i is odd
+    if (parseInt(s[i]) % 2 === 1) {
+      // Number of substrings ending here = index + 1
+      count += i + 1;
+    }
+  }
+  
+  return count;
+}
+
+// Test cases
+console.log(solve("1341"));     // 7
+console.log(solve("1357"));     // 10
+console.log(solve("13471"));    // 12</code></pre>
+            </section>
+
             <section id="projects">
                 <h2>Projects</h2>
                 
