@@ -30,6 +30,120 @@
         </div>
     </header>
 
-   
+    <main>
+        <div class="container">
+            <section id="profile">
+                <h2>Profile</h2>
+                <p>I am a qualified developer with 6+ years of experience in frontend, backend, mobile apps. Strong analytical skills. Team player with an eye for detail. Currently based in Buenos Aires, Argentina, working on innovative fintech solutions and leading development teams to deliver high-quality software products.</p>
+            </section>
+
+            <section id="contacts">
+                <h2>Contact Information</h2>
+                <ul>
+                    <li>Email: <a href="mailto:vladimir.tugutov@gmail.com">vladimir.tugutov@gmail.com</a></li>
+                    <li>Phone: <a href="tel:+5491121812104">+54 9 11 21812104</a> (WhatsApp)</li>
+                    <li>Telegram: <a href="https://t.me/vladimir_tgtv">@vladimir_tgtv</a></li>
+                    <li>LinkedIn: <a href="https://linkedin.com/in/vladimir-tugutov/">linkedin.com/in/vladimir-tugutov/</a></li>
+                    <li>GitHub: <a href="https://github.com/vladimir-tugutov">github.com/vladimir-tugutov</a></li>
+                    <li>Location: Buenos Aires, Argentina (UTC -3)</li>
+                </ul>
+            </section>
+
+            <section id="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>Frontend: JavaScript, TypeScript, React, Redux</li>
+                    <li>Backend: Node.js, Nest.js, REST API, GraphQL, WebSockets</li>
+                    <li>Mobile &amp; Cross-platform: Apache Cordova, Framework7, PWA, TWA</li>
+                    <li>Databases: MySQL, PostgreSQL, Alasql, SQLite</li>
+                    <li>DevOps &amp; Tools: Docker, Swagger API, AWS</li>
+                    <li>Push Notifications: Firebase Cloud Messages</li>
+                    <li>CSS &amp; Styling: CSS3, Sass/SCSS, Bootstrap, Tailwind CSS, Chakra UI, styled-components</li>
+                    <li>Collaboration &amp; Process: Agile Methodologies, Code Reviews, Client Collaboration, Technical Documentation</li>
+                </ul>
+            </section>
+
+            <section id="code">
+                <h2>Code Example</h2>
+                <p>Function to debounce API calls and improve performance:</p>
+                <pre><code>function debounce&lt;T extends (...args: any[]) =&gt; any&gt;(
+  func: T,
+  delay: number
+): (...args: Parameters&lt;T&gt;) =&gt; void {
+  let timeoutId: ReturnType&lt;typeof setTimeout&gt; | null = null;
+  
+  return (...args: Parameters&lt;T&gt;) =&gt; {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    
+    timeoutId = setTimeout(() =&gt; {
+      func(...args);
+    }, delay);
+  };
+}
+
+// Usage example
+const searchAPI = debounce((query: string) =&gt; {
+  fetch(`/api/search?q=${encodeURIComponent(query)}`)
+    .then(response =&gt; response.json())
+    .then(data =&gt; console.log(data));
+}, 300);</code></pre>
+            </section>
+
+            <section id="experience">
+                <h2>Work Experience</h2>
+                
+                <article class="job">
+                    <h3>Senior React Developer</h3>
+                    <p class="company">EXGO. Licensed Money Exchange, Buenos Aires - Bangkok</p>
+                    <p class="period">2024 - Present</p>
+                    <ul>
+                        <li>Developed and maintained core features of the Exchange platform using React and TypeScript, enabling seamless fiat and cryptocurrency exchange for global users and supporting a daily volume of over 1,500 transactions</li>
+                        <li>Built responsive trading interfaces with real-time data visualization, integrated RESTful and blockchain APIs for transaction processing, and implemented secure wallet management features, which reduced payment-related support tickets by approximately 25%</li>
+                        <li>Optimized application performance and implemented lazy loading, code splitting, and WebSocket-based updates, cutting initial page load time by around 35% and improving time-to-interactive on key trading screens by 40%</li>
+                    </ul>
+                </article>
+
+                <article class="job">
+                    <h3>Fullstack Developer</h3>
+                    <p class="company">BREALIT LLC, Moscow</p>
+                    <p class="period">2019 - 2024</p>
+                    <ul>
+                        <li>Architected and built front-end solutions using modern patterns and best practices (JS, TS, React, Redux) while designing scalable back-end systems for ERP platforms (Node.js, MySQL)</li>
+                        <li>Improved application performance by approximately 25% and reduced API response time by around 30%</li>
+                    </ul>
+                </article>
+
+                <article class="job">
+                    <h3>Senior Mobile Apps Developer</h3>
+                    <p class="company">BREALIT LLC, Moscow</p>
+                    <p class="period">2019 - 2024</p>
+                    <ul>
+                        <li>Lead contributor to mobile version of ERP system services used in production by five clients (JS, TS, React, Framework7, Apache Cordova)</li>
+                        <li>Coordinated a team of 3 mobile app developers by resolving blockers and conflicts, providing code reviews, and ensuring timely project delivery, resulting in a 20% increase in development efficiency</li>
+                    </ul>
+                </article>
+            </section>
+
+            <section id="education">
+                <h2>Education</h2>
+                <article class="education-item">
+                    <h3>Master of Computer Science</h3>
+                    <p class="institution">Novosibirsk State University</p>
+                </article>
+                <article class="education-item">
+                    <h3>Bachelor of Mathematics and Mechanics</h3>
+                    <p class="institution">Novosibirsk State University</p>
+                </article>
+
+                <h3>Languages</h3>
+                <ul>
+                    <li>English: Proficient</li>
+                    <li>Russian: Native</li>
+                </ul>
+            </section>
+        </div>
+    </main>
 </body>
 </html>
