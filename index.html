@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vladimir Tugutov - TypeScript Full Stack Developer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="photo-container">
+                    <img src="photo.png" alt="Vladimir Tugutov photo" class="profile-photo">
+                </div>
+                <div class="header-text">
+                    <h1>Vladimir Tugutov</h1>
+                    <p class="subtitle">TypeScript Full Stack Developer</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section id="profile">
+                <h2>Profile</h2>
+                <p>I am a qualified developer with experience in frontend, backend, mobile apps. Strong analytical skills. Team player with an eye for detail. Currently based in Almaty, Kazakhstan, working on innovative fintech solutions and leading development teams to deliver high-quality software products.</p>
+            </section>
+
+            <section id="contacts">
+                <h2>Contact Information</h2>
+                <ul>
+                    <li>Email: <a href="mailto:vladimir.tugutov@gmail.com">vladimir.tugutov@gmail.com</a></li>
+                    <li>Telegram: <a href="https://t.me/vladimir_tgtv">@vladimir_tgtv</a></li>
+                    <li>LinkedIn: <a href="https://linkedin.com/in/vladimir-tugutov/">linkedin.com/in/vladimir-tugutov/</a></li>
+                    <li>GitHub: <a href="https://github.com/vladimirtugutov">github.com/vladimirtugutov</a></li>
+                    <li>Discord: @vladimirtgtv</li>
+                    <li>Location: Almaty, Kazakhstan (UTC +5)</li>
+                </ul>
+            </section>
+
+            <section id="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>Frontend: JavaScript, TypeScript, React, Redux</li>
+                    <li>Backend: Node.js, Nest.js, REST API, GraphQL, WebSockets</li>
+                    <li>Mobile &amp; Cross-platform: Apache Cordova, Framework7, PWA, TWA</li>
+                    <li>Databases: MySQL, PostgreSQL, Alasql, SQLite</li>
+                    <li>DevOps &amp; Tools: Docker, Swagger API, AWS</li>
+                    <li>Push Notifications: Firebase Cloud Messages</li>
+                    <li>CSS &amp; Styling: CSS3, Sass/SCSS, Bootstrap, Tailwind CSS, Chakra UI, styled-components</li>
+                    <li>Collaboration &amp; Process: Agile Methodologies, Code Reviews, Client Collaboration, Technical Documentation</li>
+                </ul>
+            </section>
+
+            <section id="code">
+                <h2>Code Example</h2>
+                <p>Function to debounce API calls and improve performance:</p>
+                <pre><code>function debounce&lt;T extends (...args: any[]) =&gt; any&gt;(
+  func: T,
+  delay: number
+): (...args: Parameters&lt;T&gt;) =&gt; void {
+  let timeoutId: ReturnType&lt;typeof setTimeout&gt; | null = null;
+  
+  return (...args: Parameters&lt;T&gt;) =&gt; {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    
+    timeoutId = setTimeout(() =&gt; {
+      func(...args);
+    }, delay);
+  };
+}
+
+// Usage example
+const searchAPI = debounce((query: string) =&gt; {
+  fetch(`/api/search?q=${encodeURIComponent(query)}`)
+    .then(response =&gt; response.json())
+    .then(data =&gt; console.log(data));
+}, 300);</code></pre>
+            </section>
+
+            <section id="code-codewars">
+                <h2>Code Example #2</h2>
+                <p>Solution to <a href="https://www.codewars.com/kata/59da47fa27ee00a8b90000b4/train/javascript">Codewars kata</a> "Odd-numbered substrings" - Count how many odd-numbered substrings can be formed from a string of digits:</p>
+                <pre><code>// Task: Given a string of integers, return the number of 
+// odd-numbered substrings that can be formed.
+// Example: "1341" -&gt; substrings: 1, 1, 3, 13, 41, 341, 1341 = 7 numbers
+
+function solve(s) {
+  let count = 0;
+  
+  // Key insight: A number is odd if its last digit is odd
+  // For each position with an odd digit, count all substrings 
+  // ending at that position
+  
+  for (let i = 0; i &lt; s.length; i++) {
+    // If digit at position i is odd
+    if (parseInt(s[i]) % 2 === 1) {
+      // Number of substrings ending here = index + 1
+      count += i + 1;
+    }
+  }
+  
+  return count;
+}
+
+// Test cases
+console.log(solve("1341"));     // 7
+console.log(solve("1357"));     // 10
+console.log(solve("13471"));    // 12</code></pre>
+            </section>
+
+            <section id="projects">
+                <h2>Projects</h2>
+                
+                <article class="project">
+                    <h3>Memory Card Game</h3>
+                    <p class="project-description">A memory development game featuring pairs of matching cards. Cards are unique for each game, generated at the start of each round using The Cat API and random.dog API. Built with vanilla JavaScript and modern web APIs.</p>
+                    <p class="project-tech"><strong>Technologies:</strong> JavaScript, HTML5, CSS3, REST API, Fetch API</p>
+                    <p class="project-links">
+                        <a href="https://github.com/vladimirtugutov/memoryCardGame" target="_blank">View Code on GitHub</a>
+                    </p>
+                </article>
+
+                <article class="project">
+                    <h3>EasyTrip - Flight Booking Application</h3>
+                    <p class="project-description">Travel platform for booking flights across millions of routes with the best deals. Includes features for discovering tours and activities worldwide, helping travelers plan unforgettable experiences.</p>
+                    <p class="project-tech"><strong>Technologies:</strong> React, JavaScript, REST API, Node.js</p>
+                    <p class="project-links">
+                        <a href="https://github.com/vladimirtugutov/EasyTrip" target="_blank">View Code on GitHub</a>
+                    </p>
+                </article>
+            </section>
+
+            <section id="experience">
+                <h2>Work Experience</h2>
+                
+                <article class="job">
+                    <h3>React Developer</h3>
+                    <p class="company">EXGO. Licensed Money Exchange, Buenos Aires - Bangkok</p>
+                    <p class="period">2024 - Present</p>
+                    <ul>
+                        <li>Developed and maintained core features of the Exchange platform using React and TypeScript, enabling seamless fiat and cryptocurrency exchange for global users and supporting a daily volume of over 1,500 transactions</li>
+                        <li>Built responsive trading interfaces with real-time data visualization, integrated RESTful and blockchain APIs for transaction processing, and implemented secure wallet management features, which reduced payment-related support tickets by approximately 25%</li>
+                        <li>Optimized application performance and implemented lazy loading, code splitting, and WebSocket-based updates, cutting initial page load time by around 35% and improving time-to-interactive on key trading screens by 40%</li>
+                    </ul>
+                </article>
+
+                <article class="job">
+                    <h3>Fullstack Developer</h3>
+                    <p class="company">BREALIT LLC, Moscow</p>
+                    <p class="period">2019 - 2024</p>
+                    <ul>
+                        <li>Architected and built front-end solutions using modern patterns and best practices (JS, TS, React, Redux) while designing scalable back-end systems for ERP platforms (Node.js, MySQL)</li>
+                        <li>Improved application performance by approximately 25% and reduced API response time by around 30%</li>
+                    </ul>
+                </article>
+
+                <article class="job">
+                    <h3>Mobile Apps Developer</h3>
+                    <p class="company">BREALIT LLC, Moscow</p>
+                    <p class="period">2019 - 2024</p>
+                    <ul>
+                        <li>Lead contributor to mobile version of ERP system services used in production by five clients (JS, TS, React, Framework7, Apache Cordova)</li>
+                        <li>Coordinated a team of 3 mobile app developers by resolving blockers and conflicts, providing code reviews, and ensuring timely project delivery, resulting in a 20% increase in development efficiency</li>
+                    </ul>
+                </article>
+            </section>
+
+            <section id="education">
+                <h2>Education</h2>
+                <article class="education-item">
+                    <h3>Master of Computer Science</h3>
+                    <p class="institution">Novosibirsk State University</p>
+                </article>
+                <article class="education-item">
+                    <h3>Bachelor of Mathematics and Mechanics</h3>
+                    <p class="institution">Novosibirsk State University</p>
+                </article>
+
+                <h3>Languages</h3>
+                <ul>
+                    <li>English: Proficient</li>
+                    <li>Russian: Native</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                <a href="https://github.com/vladimirtugutov">GitHub: vladimirtugutov</a>
+            </p>
+            <p>2026</p>
+            <p>
+                <a href="https://rs.school/courses/short-track">
+                    <img src="rs-school-logo.svg" alt="RS School logo" class="rs-logo">
+                </a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
